@@ -1,0 +1,21 @@
+{
+    "LoginPage": {
+        "userEmail": "[autocomplete='email']",
+        "userPass": "[autocomplete='current-password']",
+        "loginButton": "[class='button button__primary login__button']"
+    },
+    "DashBoardPage": {
+        "loginIcon": "[data-testid='account-flyout-profile-icon']",
+        "parfum": "[data-uid='FragrancesNavNode_DE']"
+    },
+    "PerfumePage": {
+        "accept_all": "//button[@type='button' and @class='button button__primary uc-list-button__accept-all']",
+        "click_on_perfume": "//a[text()='PARFUM']",
+        "drop_down_name": "//div[@class='facet-wrapper col-sm-12 col-lg-3']",
+        "scroll_on_headline": "//h1[@class='headline-bold product-overview__headline']",
+        "select_dropdown_value": "//div[@class='facet-option__checkbox--rating-stars']",
+        "validate_number_filtered_products": "//button[@class='button button__primary facet__close-button']",
+        "verify_presence_filtered_products": "//div[@class='product-tile product-tile--is-pop-tile']//div[text()='Sale']",
+        "filter_text":"//button[@class='selected-facets__value']"
+    }
+}
