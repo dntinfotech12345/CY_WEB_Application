@@ -9,7 +9,8 @@
     "chromeTest": "npx cypress run --browser chrome",
     "recordDashboard": "npx cypress run --record --key 838cf313-94b9-4464-918f-d6f1d2308c57",
     "runAllFeatures": "npx cypress run --spec \"cypress/e2e/BDD/*.feature\" --headed --browser chrome",
-    "runPerfumeFeatures": "npx cypress run --spec \"cypress/e2e/BDD/Perfumepage.feature\" --headed --browser chrome"
+    "runPerfumeFeatures": "npx cypress run --spec \"cypress/e2e/BDD/Perfumepage.feature\" --headed --browser chrome",
+    "runandrecord": "cypress run --record --key 838cf313-94b9-4464-918f-d6f1d2308c57 --spec \"cypress/e2e/BDD/Perfumepage.feature\" --headed --browser chrome"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +23,10 @@
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^20.0.6",
     "@cypress/browserify-preprocessor": "^3.0.2",
-    "axios": "^1.7.2"
+    "archiver": "^7.0.1",
+    "axios": "^1.7.2",
+    "html-pdf": "^1.5.0",
+    "nodemailer": "^6.9.13"
   },
   "cypress-cucumber-preprocessor": {
     "json": {

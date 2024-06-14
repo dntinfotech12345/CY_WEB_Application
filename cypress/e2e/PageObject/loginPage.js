@@ -1,24 +1,39 @@
 // cypress/support/pages/loginPage.js
 import locatorReader from '../Locators/locatorsReader';
-
+import assertions from '../../support/assertions';
+import actions from '../../support/action';
 class LoginPage {
+
   constructor() {
     this.userEmailLocator = locatorReader.getLocator('LoginPage', 'userEmail');
     this.userPassLocator = locatorReader.getLocator('LoginPage', 'userPass');
-    this.loginButtonLocator = locatorReader.getLocator('LoginPage', 'loginButton');
+    this.submitButton = locatorReader.getLocator('LoginPage', 'submitButton');
+    this.errorMessage = locatorReader.getLocator('LoginPage', 'errorMessage');
+    this.successMessage = locatorReader.getLocator('LoginPage', 'successMessage');
   }
 
   enterEmail(email) {
-    cy.get(this.userEmailLocator).type(email);
+    actions.type(this.userEmailLocator, email);
   }
 
   enterPassword(password) {
-    cy.get(this.userPassLocator).type(password);
+    actions.type(this.userPassLocator, password);
   }
 
   clickLogin() {
-    cy.get(this.loginButtonLocator).click();
+    actions.click(this.submitButton);
   }
+
+  verifyLoginText(message) {
+    assertions.verifyText(this.errorMessage, message);
+
+  }
+
+  verifySuccessfulLoginText(message) {
+    assertions.verifyText(this.successMessage, message);
+
+  }
+
 }
 
 export default LoginPage;

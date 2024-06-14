@@ -4,7 +4,6 @@ const browserify = require("@badeball/cypress-cucumber-preprocessor/browserify")
 
 async function setupNodeEvents(on, config) {
 
-  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
   on("file:preprocessor", browserify.default(config));
@@ -17,7 +16,14 @@ module.exports = defineConfig({
   defaultCommandTimeout: 60000,  
    reporter: 'cypress-mochawesome-reporter',
   env:{
-    url:'https://www.douglas.de/de'
+    url: 'https://www.douglas.de/de',
+    EMAIL_USER: "roshanmorkhade96@gmail.com",
+    EMAIL_PASS: "ymoy mgti lvzg teyx",
+    TO_EMAIL: "kumarvikasg786@gmail.com",
+    SCENARIO_NAMES: ["Scenario 1", "Scenario 2"],
+    EMAIL_BODY: "Please find the attached test results.",
+    EMAIL_REGARDS: "Best regards, QA Team"
+
   },
   projectId: "v51nm9",
   retries: {
@@ -29,8 +35,9 @@ module.exports = defineConfig({
     // implement node event listeners here,
     specPattern: 'cypress/e2e/BDD/*.feature',
     // specPattern: 'cypress run --record --key 838cf313-94b9-4464-918f-d6f1d2308c57 --spec cypress/e2e/BDD/*.feature',
-    // specPattern: 'cypress run --record --key 838cf313-94b9-4464-918f-d6f1d2308c57 --spec "cypress/e2e/BDD/*.feature" --headed --browser chrome'
+    // specPattern: 'cypress run --record --key 838cf313-94b9-4464-918f-d6f1d2308c57 --spec "cypress/e2e/BDD/Perumepage.feature" --headed --browser chrome'
     //838cf313-94b9-4464-918f-d6f1d2308c57
+    supportFile: 'cypress/support/e2e.js'
   }, 
   
 })

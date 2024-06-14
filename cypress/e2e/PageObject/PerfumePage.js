@@ -1,8 +1,5 @@
 // cypress/support/pages/class PerfumePage.js
 import locatorReader from "../Locators/locatorsReader";
-
-const drop_down_name = "highlights";
-const dropdown_select = "Sale";
 class PerfumePage {
   constructor(page, Locators) {
     this.accept_all = locatorReader.getLocator("PerfumePage", "accept_all");
@@ -13,8 +10,8 @@ class PerfumePage {
     this.verify_presence_filtered_products = locatorReader.getLocator("PerfumePage", "verify_presence_filtered_products");
     this.drop_down_name = locatorReader.getLocator("PerfumePage", "drop_down_name");
     this.filter_text = locatorReader.getLocator("PerfumePage", "filter_text");
+    this.filter_text = locatorReader.getLocator("PerfumePage", "filter_text");
   }
-
   async acceptAllCokise() {
     cy.xpath(this.accept_all).should("be.visible").then((isVisible) => {
       if (isVisible) {
@@ -26,8 +23,6 @@ class PerfumePage {
         cy.log("Accept all cookies dropdown is not visible. Skipping the action...");
       }
     })
-
-
   }
 
   async clickOnPerfume() {
@@ -35,8 +30,8 @@ class PerfumePage {
     cy.log(`<============Perfume Page is clicked =======>`);
   }
 
-  async verifyPerfumePage() {
-    cy.url().should("eq", "https://www.douglas.de/de/c/parfum/01");
+  async verifyPerfumePage(url) {
+    cy.url().should("eq", url);
     cy.log(`<============matched url =======>`);
   }
 
@@ -46,18 +41,19 @@ class PerfumePage {
     });
   }
 
-  async clickOnHighlightDropdown() {
+  async clickOnHighlightDropdown(drop_down_name ) {
     cy.xpath(this.scroll_on_headline).should("be.visible").then(($headline) => {
       cy.wrap($headline).scrollIntoView().should("be.visible");
     });
     cy.xpath(this.drop_down_name).contains(drop_down_name, { matchCase: false }).click();
   }
 
-  async clickOnSaleOption() {
+  async clickOnSaleOption(dropdown_select) {
     cy.xpath(this.select_dropdown_value).contains(dropdown_select).click();
   }
 
   async verifyFilterIsApplied() {
+    //chai lib to assert
     cy.xpath(this.filter_text)
       .should("be.visible", { timeout: 30000 });
   }

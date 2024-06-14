@@ -15,6 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
 //cypress-mochawesome-reporter
 import 'cypress-mochawesome-reporter/register';
 // Alternatively you can use CommonJS syntax:
@@ -26,3 +27,30 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   })
 // @ts-ignore
 require('cypress-xpath');
+
+// cypress/support/index.js
+
+// Import the sendEmailAfterTests function
+// cypress/support/index.js
+
+// cypress/plugins/index.js
+
+const { sendEmailAfterTests } = require('../support/email');
+
+module.exports = (on, config) => {
+    on('task', {
+        async sendEmailAfterTests() {
+            await sendEmailAfterTests();
+            return null;
+        }
+    });
+};
+
+
+// const { sendEmailAfterTests } = require('../support/email');
+
+// after(() => {
+//     // Wrap the email sending function call in a Cypress task
+//     cy.task('sendEmailAfterTests');
+// });
+

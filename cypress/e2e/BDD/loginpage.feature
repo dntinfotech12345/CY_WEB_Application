@@ -1,7 +1,24 @@
+Feature: Login Page test Scanario
 
-Feature: Login functionality
+  Scenario Outline: Test login with valide credentials
+    Given I navigate to the login page
+    When I enter username "<username>"
+    And I enter password "<password>"
+    And I click the login button
+    Then I should see login successful the message "<message>"
 
-  Scenario: User logs in with valid credentials
-    Given I am on the login page
-    When I login with username "roshan" and password "password123"
-    Then I should be redirected to the dashboard
+    Examples:
+      | username | password    | message                                              |
+      | student  | Password123 | Congratulations student. You successfully logged in! |
+
+  Scenario Outline: Test login with invalide credentials
+    Given I navigate to the login page
+    When I enter username "<username>"
+    And I enter password "<password>"
+    And I click the login button
+    Then I should see the message "<message>"
+
+    Examples:
+      | username      | password    | message                   |
+      | incorrectUser | Password123 | Your username is invalid! |
+      | student       | pass2       | Your password is invalid! |

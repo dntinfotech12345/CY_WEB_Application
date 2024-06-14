@@ -1,8 +1,11 @@
 {
     "LoginPage": {
-        "userEmail": "[autocomplete='email']",
-        "userPass": "[autocomplete='current-password']",
-        "loginButton": "[class='button button__primary login__button']"
+        "userEmail": "#username",
+        "userPass": "#password",
+        "submitButton": "#submit",
+         "errorMessage": "#error",
+         "successMessage":".has-text-align-center"
+       
     },
     "DashBoardPage": {
         "loginIcon": "[data-testid='account-flyout-profile-icon']",

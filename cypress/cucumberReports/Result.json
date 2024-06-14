@@ -4,100 +4,226 @@
     "elements": [
       {
         "description": "",
-        "id": "verify-the-number-of-product-for-perfume-page-highlight-dropdown;verify-the-sale-option-in-highlight-dropdown",
-        "keyword": "Scenario",
-        "line": 3,
-        "name": "Verify the sale option in highlight dropdown",
+        "id": "login-page-test-scanario;test-login-with-valide-credentials",
+        "keyword": "Scenario Outline",
+        "line": 12,
+        "name": "Test login with valide credentials",
         "steps": [
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 4,
-            "name": "I am on the home page",
+            "name": "I navigate to the login page",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 36435000000
+              "duration": 7482000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 5,
-            "name": "I click on perfume page",
+            "name": "I enter username \"student\"",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 2291000000
+              "duration": 319000000
             }
           },
           {
             "arguments": [],
-            "keyword": "Then ",
+            "keyword": "And ",
             "line": 6,
-            "name": "I am on the perfume page",
+            "name": "I enter password \"Password123\"",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 526000000
+              "duration": 364000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 7,
-            "name": "All option of dropdown is displayed",
+            "name": "I click the login button",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 12349000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "I click on the highlight dropdown",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 1001000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 9,
-            "name": "I click on SALE option and verify the number of product",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 869000000
+              "duration": 4726000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 10,
-            "name": "Verify the sale filter is applied",
+            "line": 8,
+            "name": "I should see login successful the message \"Congratulations student. You successfully logged in!\"",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 3076000000
+              "duration": 29000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-test-scanario;test-login-with-invalide-credentials",
+        "keyword": "Scenario Outline",
+        "line": 23,
+        "name": "Test login with invalide credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3844000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I enter username \"incorrectUser\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 330000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter password \"Password123\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 358000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click the login button",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 113000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see the message \"Your username is invalid!\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-test-scanario;test-login-with-invalide-credentials",
+        "keyword": "Scenario Outline",
+        "line": 24,
+        "name": "Test login with invalide credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I navigate to the login page",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4356000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I enter username \"student\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 284000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter password \"pass2\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 253000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click the login button",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 126000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see the message \"Your password is invalid!\"",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 24000000
             }
           }
         ],
@@ -105,11 +231,11 @@
         "type": "scenario"
       }
     ],
-    "id": "verify-the-number-of-product-for-perfume-page-highlight-dropdown",
+    "id": "login-page-test-scanario",
     "line": 1,
     "keyword": "Feature",
-    "name": "Verify the Number of product for perfume page Highlight dropdown",
+    "name": "Login Page test Scanario",
     "tags": [],
-    "uri": "cypress\\e2e\\BDD\\Perfumepage.feature"
+    "uri": "cypress\\e2e\\BDD\\loginpage.feature"
   }
 ]

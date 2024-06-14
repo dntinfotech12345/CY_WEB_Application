@@ -24,4 +24,10 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 // @ts-ignore
-require('cypress-xpath');
+
+// cypress/support/commands.js
+Cypress.Commands.add('loadFixtureData', (fileName) => {
+  return cy.fixture(fileName).then((data) => {
+    return data;
+  });
+});

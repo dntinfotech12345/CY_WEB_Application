@@ -1,24 +1,28 @@
-// cypress/integration/step_definitions/loginSteps.js
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import LoginPage from '../../PageObject/loginPage';
+import loginpage from '../../PageObject/loginPage'
 
-const loginPage = new LoginPage();
+const loginPage = new loginpage();
 
-Given('I am on the login page', () => {
-  cy.intercept('GET', '**', (req) => {
-    req.headers['Accept'] = '';
-    req.headers['User-Agent'] = 'CustomUserAgent/1.0';
-  }).as('customRequest');
-  cy.visit('https://www.douglas.de/de');
+Given('I navigate to the login page', () => {
+  cy.visit("https://practicetestautomation.com/practice-test-login/");
 });
 
-When('I login with username {string} and password {string}', (username, password) => {
-  // loginPage.enterEmail(username);
-  // loginPage.enterPassword(password);
-  // loginPage.clickLogin();
+When('I enter username {string}', (username) => {
+  loginPage.enterEmail(username);
 });
 
-
-Then('I should be redirected to the dashboard', () => {
-  // cy.url().should('include', '/dashboard');
+When('I enter password {string}', (password) => {
+  loginPage.enterPassword(password);
 });
+
+When('I click the login button', () => {
+  loginPage.clickLogin();
+});
+
+Then('I should see the message {string}', (message) => {
+  loginPage.verifyLoginText(message);
+});
+Then('I should see login successful the message {string}', (message) => {
+  loginPage.verifySuccessfulLoginText(message);
+});
+
